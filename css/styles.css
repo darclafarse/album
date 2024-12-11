@@ -1,49 +1,319 @@
+@import url(https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&display=swap);
+
+:root {
+    --primary-colour: #931B20; 
+    --secondary-color: #ECAC9C;
+    --hovershade: #761619;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--primary-colour);
+}
+p {
+    max-width: 60ch;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family:"Mukta Malar", sans-serif;
+}
 header {
-    height: 200px;
-    background-color: rgb(171, 137, 203);
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+}
+nav {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.socials {
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-left: 25px;
+}
+.socials img {
+    display: flex;
+    width: 30px;
+    align-items: center;
+}
+.socials img:hover {
+    filter: brightness(1.5);
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-right: 15px;
+}
+nav li{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0 8px 0 8px;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+nav li:hover{
+    color: var(--primary-colour);
+}
+.logo {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
 }
 .hero {
     min-height: 500px;
+    width: 100%;
     background-color: rgb(207, 140, 107);
     color: rgb(128, 186, 146);
-}
-.intro, .single, .card, .tracks {
-    max-width: 900px;
     margin: auto;
-}
-.intro {
-    background-color: rgb(149, 149, 189);
-}
-.single {
-    background-color: rgb(73, 87, 82);
-    display: flex;
-}
-.single img {
-    width: 300px;
-}
-.song-content {
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    align-items: center;
+    background-image: url(../assets/images/albumBG.jpg);
+    background-position: 0 -250px;
+    background-size: cover;
 }
-.song-content audio {
-    
+.hero h1 {
+    text-align: center;
+    color: var(--primary-colour);
+    font-size: 100px;
+    line-height: 1.05;
+    margin-top: 100px;
+}
+.hero p {
+    align-items: center;
+    font-size: 30px;
+    color: var(--primary-colour);
+    margin-top: 0;
+}
+.title {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    border-bottom: solid 3px var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--primary-colour);
+}
+.intro, .single, .card, .tracks, .store-link {
+    max-width: 1000px;
+    margin: auto;
+}
+.single, .store-link {
+    border-bottom: solid 3px var(--secondary-color);
+}
+.single, .store-link, .intro {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: 20px;
+    text-align: center;
+}
+.single img, .store-link img, .intro img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-basis: 0;
+    justify-self: flex-start;
+}
+.song-content {
+    max-width: 500px;
+    padding: 20px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+}
+.song-content h2, h3, p, button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--primary-colour);
+}
+.song-content h2, h3 {
+    font-size: 36px;
+}
+.song-content h4 {
+    color: var(--primary-colour);
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+.store-info {
+    max-width: 500px;
+    padding: 20px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.store-info h2 {
+    color: var(--primary-colour);
+    font-size: 36px;
+    line-height: 110%;
+}
+.store-info h2, p, button {
+    display: flex;
+    justify-content: center;
+}
+audio {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10px;
 }
 .tracks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
-.card {
-    background-color: rgb(73, 87, 82);
-    display: flex;
+ol {
+    list-style: none;
 }
-
-.card img{
+.tracklist {
+    max-width: 650px;
+    padding: 20px;
+    margin: auto;
+    justify-content: space-evenly;
+}
+.tracklist div{
+    display: inline-flex
+}
+.side1, .side2 {
+    margin-left: 60px;
+    margin-right: 80px;
+}
+.tracklist li {
+    font-size: 24px;
+    color: var(--primary-colour);
+}
+.centered-content{
+    margin: auto;
+}
+.centered-content h2 {
+    font-size: 65px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    max-width: 1200px;
+    margin: auto;
+    border-bottom: solid 3px var(--secondary-color);
+}
+.product {
+    padding: 10px;
+}
+.card {
+    margin: 20px;
+    min-height: 200px;
+    background-color: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 10px;
+}
+.card a:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10%;
+}
+.card img {
     width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10%;
+}
+.card h3 {
+    font-size: 20px;
+    line-height: 110%;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+.card h4 {
+    font-size: 20px;
+    color: var(--primary-colour);
+    display: flex;
+    justify-content: center;
+}
+.card p{
+    padding-bottom: 10px;
+}
+.card button {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+}
+button {
+    text-decoration: none;
+    background-color: var(--primary-colour);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+button:hover {
+    background-color: var(--hovershade);
+}
+.return {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.band-info {
+    max-width: 500px;
+    padding: 20px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+}
+.band-info h2 {
+    display: flex;
+    justify-content: center;
+    color: var(--primary-colour);
+}
+.band-info p {
+    text-align: left;
+    max-width: 60ch;
 }
 footer{
-    background-color: rgb(169, 135, 135);
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
 }
